@@ -1,9 +1,24 @@
-# Guiding Personalized Dialogue Generation with Contrastive Latent Variables when no Persona Infomation
+# CLV
+
+This repository provides the implementation details for the ACL 2023 main conference paper:
+
+**Enhancing Personalized Dialogue Generation with Contrastive Latent Variables: Combining Sparse and Dense Persona**
+
+
+## 0.Preinstallation
+```python
+  git clone CLV
+  cd CLV
+  pip install -r requirements.txt
+```
 
 ## 1.Parts that may need to be modified
 In ```config.py```:
 ```python
+    # mdoel_file
     output_dir = './Model'
+
+    # evaluation_model_file
     consis_model_dir_EN = './Consis_Model/consis_model_EN.ckpt'
     consis_model_dir_ZH = './Consis_Model/consis_model_ZH.ckpt'
     
@@ -39,7 +54,7 @@ I am a college student and i am a college student<|endoftext|>
 
 
 
-## 4.Training Consis_Model
+## 4.Training Consis_Model(if you need)
 - Running ```Consis_Model.py```;
 - Modify the model name according to **consis_model_dir_EN** or **consis_model_dir_ZH**;
 - Execute **3.Running**.
@@ -48,4 +63,7 @@ I am a college student and i am a college student<|endoftext|>
 -------
 ## MISC
 * Build upon 🤗 [Transformers](https://github.com/huggingface/transformers).
+
+
+
 

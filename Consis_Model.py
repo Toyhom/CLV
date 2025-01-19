@@ -44,31 +44,6 @@ class Consis_Data(pl.LightningDataModule):
                 data_single = f.read()
         data_single = data_single.split('\n[SEP]\n')
         data = []
-
-        for i in range(len(data_single)):
-            if i+2 < len(data_single):
-                temp = data_single[i].split('\n')
-                n_temp = data_single[i+1].split('\n')
-                n_n_temp = data_single[i+2].split('\n')
-                
-                temp[1] = temp[1].split('<|endoftext|>')[-2]
-                n_temp[1] = n_temp[1].split('<|endoftext|>')[-2]
-                n_n_temp[1] = n_n_temp[1].split('<|endoftext|>')[-2]
-                # temp[2] = temp[2].replace('<|endoftext|>','')
-
-                # Satisfy the coherent and consistent 0
-                data.append([temp[0],temp[1],temp[2],0])
-                
-                # Don't meet 1
-                data.append([temp[0],temp[1],n_temp[2],1])
-                
-                # Meet the same 2 
-                if temp[0] == n_n_temp[0]:
-                    data.append([temp[0],temp[1],n_n_temp[2],2])
-                    
-                # # Meet the coherent 3
-                # data.append([temp[0],n_temp[1],n_temp[2],3])
-                
                 
         data_single = data
         

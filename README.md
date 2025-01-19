@@ -18,10 +18,6 @@ In ```config.py```:
     # mdoel_file
     output_dir = './Model'
 
-    # evaluation_model_file
-    consis_model_dir_EN = './Consis_Model/consis_model_EN.ckpt'
-    consis_model_dir_ZH = './Consis_Model/consis_model_ZH.ckpt'
-    
     # Data file format
     data_path = ['/Data/Persona_Dialoue_EN','/Data/Persona_Dialoue_ZH']
     
